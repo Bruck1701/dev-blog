@@ -5,15 +5,25 @@
     <th>Title</th>
     <th>Content</th>
     <th>Category</th>
-    <th>Actions</th>
+    <th colspan="3">Actions</th>
   </thead>
   <tbody>
     <% @articles.each do |article| %>
     <tr>
-      <th><%= article.title %></th>
-      <th><%= article.content%></th>
-      <th><%= article.category.name%></th>
+      <td><%= article.title %></td>
+      <td><%= article.content%></td>
+      <td><%= article.category.name%></td>
+      <td> <%= link_to "Show", article_path(article)%></td>
+      <td> <%= link_to "Edit", edit_article_path(article) %></td>
+      <td> <%= link_to "Delete", article_path(article),method: :delete, data: {confirm: 'Are you sure?' }%>  </td> 
     </tr>
     <% end %>
   </tbody>
+
+  
+
 </table>
+<br>
+<div> 
+<%= link_to "New Article", new_article_path %>
+</div>

@@ -3,3 +3,10 @@
 Title: <%= @article.title %> <br>
 Content: <%= @article.content%> <br>
 Category:  <%= @article.category.name%><br>
+
+
+<br>
+<%= link_to 'Edit', edit_article_path(@article) %> | 
+<%=link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}%> |
+<%= link_to "Return", articles_path%>
+
