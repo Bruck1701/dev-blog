@@ -1,0 +1,80 @@
+@import "bootstrap/dist/css/bootstrap";
+
+@media all and (max-width: 1200px) {
+  /* screen size until 1200px */
+  body {
+    font-size: 1.5em; /* 1.5x default size */
+  }
+}
+@media all {
+  .navbar {
+    background-color: #000000 !important;
+  }
+
+  .nav-link {
+    color: #d5d5d5 !important;
+  }
+
+  #logo {
+    color: #d5d5d5 !important;
+    font-family: "Passion One", cursive;
+    font-size: 2em;
+    letter-spacing: -1px;
+  }
+
+  #home-container {
+    margin-top: 25px;
+  }
+
+  .jumbotron {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      asset-url("circuitwallpaper.jpg");
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+  }
+
+  .container {
+    padding-right: 0; /*15px in bootstrap.css*/
+    padding-left: 0; /*idem*/
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  /* screen size until 1000px */
+  #logo {
+    font-size: 4em;
+  }
+
+  .display-4 {
+    font-size: 2em;
+  }
+
+  .jumbotron,
+  .lead {
+    font-size: 1.5em;
+  }
+
+  .navbar-brand {
+    font-size: 2.5em;
+  }
+  .nav-link {
+    font-size: 1.8em;
+  }
+  .dropdown-item {
+    font-size: 2.8em;
+  }
+  body {
+    font-size: 1.5em; /* 1.2x default size */
+  }
+}
+@media all and (max-width: 500px) {
+  /* screen size until 500px */
+  body {
+    font-size: 0.5em; /* 0.8x default size */
+  }
+}
