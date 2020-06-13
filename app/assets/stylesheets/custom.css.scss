@@ -1,14 +1,22 @@
 @import "bootstrap/dist/css/bootstrap";
 
-@media all and (max-width: 1200px) {
-  /* screen size until 1200px */
-  body {
-    font-size: 1.5em; /* 1.5x default size */
-  }
-}
 @media all {
   .navbar {
     background-color: #000000 !important;
+  }
+
+  .card-img {
+    width: 4vw;
+    height: 5vw;
+  }
+
+  #return-to-listings {
+    text-align: right;
+    padding-right: 8em;
+  }
+
+  #card_title {
+    font-family: "Special Elite", cursive;
   }
 
   .nav-link {
@@ -18,15 +26,16 @@
   #logo {
     color: #d5d5d5 !important;
     font-family: "Passion One", cursive;
+    /*font-family: Helvetica, sans-serif;*/
     font-size: 2em;
-    letter-spacing: -1px;
+    letter-spacing: 0.5px;
   }
 
   #home-container {
     margin-top: 25px;
   }
 
-  .jumbotron {
+  #jumbotron-home {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       asset-url("circuitwallpaper.jpg");
 
@@ -42,11 +51,53 @@
     margin-right: auto;
     margin-left: auto;
   }
+  .display-4 {
+    font-family: "Passion One", cursive;
+    font-size: 6em;
+    -webkit-text-stroke: 2px black;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  #page-content {
+    flex: 1 0 auto;
+    /*background-color: lightgray;*/
+    background: linear-gradient(to right, grey, white);
+  }
+
+  #sticky-footer {
+    flex-shrink: none;
+  }
+
+  #card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Other Classes for Page Styling */
 }
 
 @media all and (max-width: 1000px) {
-  /* screen size until 1000px */
+  /* screen size until 1000px - mobiles */
+
+  .navbar {
+    min-height: 100px;
+  }
+
+  #return-to-listings {
+    padding-right: 4em;
+  }
+
+  .jumbotron {
+    width: 100%;
+  }
+
   #logo {
+    font-family: "Passion One", cursive;
     font-size: 4em;
   }
 
@@ -56,7 +107,7 @@
 
   .jumbotron,
   .lead {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
   .navbar-brand {
@@ -70,11 +121,5 @@
   }
   body {
     font-size: 1.5em; /* 1.2x default size */
-  }
-}
-@media all and (max-width: 500px) {
-  /* screen size until 500px */
-  body {
-    font-size: 0.5em; /* 0.8x default size */
   }
 }

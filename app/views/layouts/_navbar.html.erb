@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" id="logo" href="/">Dev Blog</a>
-      <button
+  
+      <%= link_to "Dev Blog", root_path, class: "navbar-brand", id: "logo" %>
+       <button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -15,12 +16,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
-            >
+            
+            
+
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about">About</a>
+            <%= link_to 'About', about_path, class: "nav-link" %>
+            
+
           </li>
           <li class="nav-item dropdown">
             <a
@@ -32,24 +35,17 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Dropdown
+              Articles
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <%= link_to "List articles", articles_path, class: "dropdown-item"%>
+              <%= link_to "New article", new_article_path, class: "dropdown-item"%>
+              
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a
-              class="nav-link disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-              >Disabled</a
-            >
-          </li>
+  
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input
@@ -63,4 +59,5 @@
           </button>
         </form>
       </div>
+     
     </nav>

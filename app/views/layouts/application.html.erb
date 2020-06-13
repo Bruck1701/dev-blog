@@ -2,17 +2,33 @@
 <html>
   <head>
     <title>Dev Blog</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+    rel="stylesheet"
   </head>
 
-  <body>
-    <%= render 'layouts/navbar'%>
-    <%= render 'layouts/messages' %>
-    <%= yield %>
+  <body class="d-flex flex-column">
+    
+    <%= render 'layouts/navbar'%> 
+    <div id="page-content">
+        <%= render 'layouts/messages' %> 
+    
+        <%= yield %>
+      </div>
+
+      <footer id="sticky-footer" class="py-4 bg-dark text-white">
+        <div class="container text-center">
+          <small>Copyright &copy; <%=link_to "Bruno Kümmel",'https://www.brunokummel.dev', class: "text-white" %>  </small>
+        </div>
+      </footer>
+
+
   </body>
 </html>
