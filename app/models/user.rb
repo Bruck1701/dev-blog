@@ -9,7 +9,11 @@ class User < ApplicationRecord
   validates :email, presence: true, 
                       uniqueness: { case_sensitive: false }, length: { maximum: 105 },
                       format: { with: VALID_EMAIL_REGEX }
-
+  
+  validates_presence_of :password_confirmation, if: :password_digest_changed?
+  validates_confirmation_of :username, :password
+  validates_confirmation_of :email,
+                            message: 'Password should match confirmation'
   
 has_secure_password
 end
