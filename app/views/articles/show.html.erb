@@ -10,7 +10,7 @@
             <hr>
             <blockquote class="blockquote mb-0">
               <p><%= simple_format(@article.content) %></p>
-                <footer class="blockquote-footer text-muted text-right"> Created <%=time_ago_in_words(@article.created_at)%> ago, edited <%=time_ago_in_words(@article.updated_at)%> ago 
+                <footer class="blockquote-footer text-muted text-right"> Created by <%= @article.user.username %> <%=time_ago_in_words(@article.created_at)%> ago, edited <%=time_ago_in_words(@article.updated_at)%> ago 
               <br><%= link_to "Edit", edit_article_path(@article) %></td>
               | <%= link_to "Delete", article_path(@article),method: :delete, data: {confirm: 'Are you sure?' }%> </footer>
             </blockquote>
