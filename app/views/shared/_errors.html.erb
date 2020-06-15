@@ -1,6 +1,6 @@
 <% if obj.errors.any? %>
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <h4 class="alert-heading">Error! The following errors prevented the <%=obj.class.name.downcase%> to be created!</h4>
+  <h4 class="alert-heading">Error! The following errors occured:</h4>
     <hr>
     <% obj.errors.full_messages.each do |msg|%>
     <p class="mb-0"><%=msg%></p>

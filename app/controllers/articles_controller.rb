@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
       flash[:notice] ="Article updated succesfully"
       redirect_to @article
     else
-      flash[:notice] = @article.errors.full_messages
+      #flash[:notice] = @article.errors.full_messages
       render :edit
     end
   end
