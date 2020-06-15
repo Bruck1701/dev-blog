@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     #The create action is used to handle the form submission from the new article creation form.
     #Strong parameters to protect the model from receiving garbage from the web.
     @article = Article.new(article_params) 
-    
+    @article.user = User.first
     if @article.save
       flash[:notice]= "Article was created successfully!"
       redirect_to article_path(@article)
