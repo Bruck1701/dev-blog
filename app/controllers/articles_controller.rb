@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   def index 
     # when we want a list of available records, index.
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page],per_page:5)
   end 
 
   def new
