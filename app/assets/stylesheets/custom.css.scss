@@ -5,6 +5,19 @@
     background-color: #000000 !important;
   }
 
+  .img-circular {
+    width: 200px;
+    align: center;
+    height: 200px;
+    object-fit: cover;
+    background-size: cover;
+    display: block;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+  }
+
+
   .card-img {
     width: 4vw;
     height: 5vw;

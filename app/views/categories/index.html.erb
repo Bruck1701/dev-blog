@@ -1,0 +1,12 @@
+<div class="container ">
+  <h1 class="text-center mt-4">Available Categories</h1>
+  <div class="d-flex justify-content-center">
+    <div class="card-body text-center" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
+        <% @categories.each do |category|%> 
+          <%=link_to category.name,category,class:"list-group-item"%> 
+        <%end%>
+      </ul>
+    </div>
+  </div>
+</div>
