@@ -2,36 +2,34 @@
 
 <div class="row justify-content-center col-11">
   <div class="col-12">
-    <%= form_with(model: @user, local: true) do |f| %> <% if new_user%>
+    <%= form_with(model: @user, local: true) do |f| %>
+      <% if new_user%>
+        <div class="form-group row">
+          <%= f.label :username, class: "col-2 col-form-label" %>
+          <div class="col-10">
+            <%= f.text_field :username, class:"form-control shadow p-3 mb-3 bg-white rounded ", placeholder:"Enter your username"%>
+          </div>
+        </div>
 
-    <div class="form-group row">
-      <%= f.label :username, class: "col-2 col-form-label" %>
-      <div class="col-10">
-        <%= f.text_field :username, class:"form-control shadow p-3 mb-3 bg-white rounded ", placeholder:"Enter your username"%>
+        <div class="form-group row">
+          <%= f.label :email, class: "col-2 col-form-label" %>
+          <div class="col-10">
+            <%= f.email_field :email, class:"form-control shadow p-3 mb-3 bg-white rounded ",placeholder: "Enter your email address"%>
+          </div>
+        </div>
+      <%end%>
+
+      <div class="form-group row">
+        <%= f.label :password, class: "col-2 col-form-label" %>
+        <div class="col-10">
+          <%= f.password_field :password, class:"form-control shadow p-3 mb-3 bg-white rounded", placeholder: "Password"%> 
+          <%= f.password_field     :password_confirmation, class:"form-control shadow p-3 mb-3 bg-white rounded", placeholder:"Password Confirmation"%>
+        </div>
       </div>
-    </div>
 
-    <div class="form-group row">
-      <%= f.label :email, class: "col-2 col-form-label" %>
-      <div class="col-10">
-        <%= f.email_field :email, class:"form-control shadow p-3 mb-3 bg-white rounded ",placeholder: "Enter your email address"%>
+      <div class="form-group row justify-content-end">
+        <%= f.submit(@user.new_record? ? "Sign up":"Change Password", class:"btn btn-primary btn-lg mr-3 shadow p-3 mb-3 rounded") %>
       </div>
-    </div>
-    <%end%>
-
-    <div class="form-group row">
-      <%= f.label :password, class: "col-2 col-form-label" %>
-      <div class="col-10">
-        <%= f.password_field :password, class:"form-control shadow p-3 mb-3 bg-white rounded", placeholder: "Password"%> 
-        <%= f.password_field     :password_confirmation, class:"form-control shadow p-3 mb-3 bg-white
-        rounded", placeholder:"Password Confirmation"%>
-      </div>
-    </div>
-
-    <div class="form-group row justify-content-end">
-      <%= f.submit(@user.new_record? ? "Sign up":"Change Password", class:"btn btn-primary btn-lg mr-3 shadow p-3 mb-3 rounded") %>
-    </div>
-
     <% end %>
   </div>
 </div>

@@ -7,10 +7,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-
   end
-
-
 
   def new
     @user = User.new
@@ -26,28 +23,22 @@ class UsersController < ApplicationController
     end
   end
 
-
   def edit
-
   end
 
   def update
     
     if @user.update(user_params)
       flash[:notice] ="Password changed succesfully"
-      redirect_to articles_path
+      redirect_to @user
     else
       #flash[:notice] = @article.errors.full_messages
       render :edit
     end
-
-
   end
 
   def destroy
   end
-
-
 
   private
   def user_params
