@@ -4,9 +4,12 @@
 
 <%= gravatar_for(@user,size:150, class:"img-circular shadow mx-auto d-block center") %>
 
-<div class="text-center mt-4">
-  <%= link_to "Change your password", edit_user_path, class: "btn btn-primary"%>
-</div>
+
+<% if logged_in? && current_user==@user %> 
+  <div class="text-center mt-4">
+    <%= link_to "Change your password", edit_user_path, class: "btn btn-primary"%>
+  </div>
+<% end %> 
 
 <h3 class="text-center mt-4">Articles</h3>
 
