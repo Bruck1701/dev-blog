@@ -75,7 +75,7 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Logged in as <%= current_user.username %> 
+                Logged in as <%= "(Admin)" if current_user.admin?%> <%=current_user.username %> 
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <%= link_to 'Profile', user_path(current_user), class: "dropdown-item"%>

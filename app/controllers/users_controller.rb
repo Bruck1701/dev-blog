@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page],per_page:5)
+    @users = User.paginate(page: params[:page],per_page:3)
   end
 
   def new
@@ -44,8 +44,11 @@ class UsersController < ApplicationController
 
   def destroy
     username = @user.username
+    session[:user_id] = nil if @user == current_user
+    
     @user.destroy
-    session[:user_id] = nil
+    
+    
     flash[:notice] = "Account #{username} and all associated articles have been successfully deleted!"
     redirect_to articles_path
 
@@ -61,8 +64,9 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user
-      flash[:alert] = "You can only change your own password!"
+    if current_user != @user && !current_user.admin?
+      flash[:alert] = "You can only change your own password or delete your own account."
+      redirect_to @user
       
     end
   end
