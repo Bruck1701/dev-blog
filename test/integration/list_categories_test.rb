@@ -8,7 +8,7 @@ class ListCategoriesTest < ActionDispatch::IntegrationTest
   
   
   
-  test "should show categories listins" do
+  test "should show categories listings" do
     get "/categories"
     assert_response :success
 
