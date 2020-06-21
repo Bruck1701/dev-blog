@@ -1,12 +1,29 @@
+<h1 class="text-center mt-4">Available Categories and its articles</h1>
+
+<div class="flickr_pagination mt-4">
+  <%= will_paginate @categories, :container => false %>
+</div>
+
 <div class="container ">
-  <h1 class="text-center mt-4">Available Categories</h1>
-  <div class="d-flex justify-content-center">
-    <div class="card-body text-center" style="width: 18rem;">
-      <ul class="list-group list-group-flush">
-        <% @categories.each do |category|%> 
-          <%=link_to category.name,category,class:"list-group-item"%> 
-        <%end%>
-      </ul>
+  <div class="d-flex justify-content-center mt-4">
+    <div class="col-4">
+      <div class="list-group " >
+        <ul class="list-group list-group-flush">
+          <% @categories.each do |category|%> 
+          <li class="list-group-item  list-group-item-action d-flex justify-content-between align-items-center">
+            <%=link_to category.name,category%> 
+            <span class="badge badge-primary badge-pill ml-4">
+              <%=category.articles.count%>
+
+            </span>
+          </li>
+          <%end%>
+        </ul>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="flickr_pagination mb-4 mt-4">
+  <%= will_paginate @categories, :container => false %>
 </div>
