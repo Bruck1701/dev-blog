@@ -7,9 +7,13 @@
           <%= link_to article.title,article_path(article) %>
         </h5>
         <p class="card-text text-right">
-          <small class="text-muted">
-            Category:<%= link_to article.category.name ,article.category %>
-          </small>
+          
+            
+            <% if article.categories.any? %> <!-- <-- This is sourcery  -->
+            
+              <%= render article.categories %>
+            <% end %>
+          
         </p>
       </div>
       <div class="card-body">
