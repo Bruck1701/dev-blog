@@ -1,23 +1,24 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show,:edit,:update,:destroy]
-  before_action :require_user, except: [:index,:show]
+  before_action :require_user, except: [:index,:show, :search]
   before_action :require_same_user, only: [:edit,:update,:destroy]
 
   def index 
-    # when we want a list of available records, index.
-    @articles = Article.paginate(page: params[:page],per_page:5)
+    
+    @articles = Search::SearchArticle.new(params).find
+   
   end 
 
   def show
-    #byebug individual listing: show
+    #individual listing: show
   end
 
 
   def new
     @article = Article.new
   end
-   
-
+  
+  
   def create
     #render plain: params[:article]
     #The create action is used to handle the form submission from the new article creation form.
@@ -61,7 +62,7 @@ class ArticlesController < ApplicationController
   end 
 
   def article_params
-    params.require(:article).permit(:title,:content, category_ids: [])
+    params.require(:article).permit(:title,:content, :search, category_ids: [])
   end
 
   def require_same_user

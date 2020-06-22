@@ -65,25 +65,18 @@
         </li>
 
 
-
-
-     
-     
-    
-
-
     </ul>
 
     <% if !logged_in? %>
-    <ul class="navbar-nav navbar-right">
+      <ul class="navbar-nav navbar-right">
 
-      <li class="nav-item">
-          <%= link_to 'Log in', login_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item mr-4">
-        <%= link_to 'Sign up', signup_path, class: "nav-link" %>
-      </li>
-      </ul>
+        <li class="nav-item">
+            <%= link_to 'Log in', login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item mr-4">
+          <%= link_to 'Sign up', signup_path, class: "nav-link" %>
+        </li>
+        </ul>
     <%else%>
    
       <ul class="navbar-nav navbar-right">
@@ -111,23 +104,17 @@
                
               </div>
             </li>
-      
-
-
-
-        
-      </ul>
+        </ul>
     <%end%>
-    <form class="form-inline my-2 my-lg-0">
-      <input
-        class="form-control mr-sm-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-        Search
-      </button>
-    </form>
+
+    
+    <%= form_tag(search_path, :method => "get", :class=>"form-inline my-2 my-lg-0") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Articles", class: "form-control mr-sm-2" %>
+      <span class="input-group-btn">
+        <%= submit_tag "Search", class: 'btn btn-info' %>
+      </span>
+    <% end %>
+    
+
   </div>
 </nav>
