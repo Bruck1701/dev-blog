@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Blog-Dev Project. Blog for Development, programming and other tech related articles. 
+### Developed with Ruby on Rails.
 
-Things you may want to cover:
+* Ruby version: 2.7.0 
 
-* Ruby version
+* Rails version: 6.0.3.1
 
-* System dependencies
+* DB dependencies: in Dev setting Sqlite3. in Prod PostgreSQL
 
-* Configuration
+* Configuration: Gemfile
 
-* Database creation
+* How to run the test suite:  Minitest testing suite. To run the tests: rails test
 
-* Database initialization
+* Services: Search Module in app/services
 
-* How to run the test suite
+* Deployment instructions: 
+    in a local network: rails server -b 0.0.0.0 -p <PORT>
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
