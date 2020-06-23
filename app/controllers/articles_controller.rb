@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
   
   
   def create
+    
     #render plain: params[:article]
     #The create action is used to handle the form submission from the new article creation form.
     #Strong parameters to protect the model from receiving garbage from the web.
