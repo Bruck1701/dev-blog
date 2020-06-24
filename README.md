@@ -5,7 +5,7 @@
 
 * Ruby version: 2.7.0 
 
-* Rails version: 6.0.3.1
+* Rails version: 6.0.3.2
 
 * DB dependencies: in Dev setting Sqlite3. in Prod PostgreSQL
 
