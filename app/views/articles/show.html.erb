@@ -4,7 +4,7 @@
 <div class = "container mt-4">      
 
    <div class="row justify-content-center align-items-center">
-    <div class="card shadow mb-5 bg-white rounded" style="width: 840px;">
+    <div class="card shadow mb-5 bg-white rounded" style="width: 940px;">
             <div class="card-body">
                 <h2 class="text-center mt-4", id="card_title"> <%=@article.title %> </h2>
             <div class="text-muted text-right"> 
@@ -15,7 +15,7 @@
                 <% end %>
             </div>
               <hr>
-            <blockquote class="blockquote mb-0">
+            <blockquote class=" mb-0">
               <p><%= markdown(@article.content) %></p>
               <footer class="blockquote-footer text-muted text-right">
                   <small>
