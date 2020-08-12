@@ -24,6 +24,10 @@ gem 'bcrypt', '~> 3.1.7'
 # pagination
 gem 'will_paginate', '~> 3.1.0'
 
+
+gem 'redcarpet'
+gem 'coderay'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

@@ -16,7 +16,7 @@
             </div>
               <hr>
             <blockquote class="blockquote mb-0">
-              <p><%= simple_format(@article.content) %></p>
+              <p><%= markdown(@article.content) %></p>
               <footer class="blockquote-footer text-muted text-right">
                   <small>
                     <%= link_to @article.user.username,@article.user %> <br />
