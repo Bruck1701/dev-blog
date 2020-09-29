@@ -1,7 +1,7 @@
 # README
 
 ## Blog-Dev Project.
-### Blog for Development, programming and other tech related articles. 
+### Mock Blog for Development, programming and other tech related articles. 
 ### Developed with Ruby on Rails.
 
 * Ruby version: 2.7.0 
